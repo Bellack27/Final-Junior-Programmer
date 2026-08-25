@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 6.0f;
-    public float gravity = 20.0f;
+    public float moveSpeed;
     private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
+    public float rotationSpeed = 15f;
+        public Camera mainCamera;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,21 +20,42 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Only allow input processing if the player is touching the ground
-        if (controller.isGrounded)
-        {
-            float moveX = Input.GetAxis("Horizontal");
-            float moveZ = Input.GetAxis("Vertical");
+    
 
-            moveDirection = new Vector3(moveX, 0.0f, moveZ);
-            moveDirection = transform.TransformDirection(moveDirection); // Move relative to player orientation
-            moveDirection *= speed;
-        }
+        RotateTowardsMouse();
+        MovePlayer();
 
-        // Apply constant gravity over time
-        moveDirection.y -= gravity * Time.deltaTime;
 
-        // Execute the movement command
-        controller.Move(moveDirection * Time.deltaTime);
+
+
+
     }
+    void RotateTowardsMouse()
+    {
+        Plane groundPlane = new Plane(Vector3.up, new Vector3(0, transform.position.y, 0));
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (groundPlane.Raycast(ray, out float distance))
+        {
+            Vector3 lookPoint = ray.GetPoint(distance);
+            Vector3 direction = (lookPoint - transform.position);
+            direction.y = 0;
+
+            if (direction.sqrMagnitude > 0.001f)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            }
+        }
+    }
+    void MovePlayer()
+    {
+        float h = Input.GetAxisRaw("Horizontal"); // A/D
+        float v = Input.GetAxisRaw("Vertical");   // W/S
+
+        Vector3 moveDirection = (Vector3.forward * v + Vector3.right * h).normalized;
+
+        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+    }
+
 }
