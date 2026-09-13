@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    public GameObject myPrefab;
     public float moveSpeed;
     private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
@@ -25,7 +25,11 @@ public class PlayerController : MonoBehaviour
         RotateTowardsMouse();
         MovePlayer();
 
+        if (Input.GetMouseButtonDown(0)) // 0 represents the left mouse button
+        {
+            shoot();
 
+        }
 
 
 
@@ -56,6 +60,16 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = (Vector3.forward * v + Vector3.right * h).normalized;
 
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
+    }
+
+    void shoot()
+    {
+        
+        float offsetDistance = 1.5f;
+        Vector3 spawnPosition = transform.position + (transform.forward * offsetDistance);
+        Instantiate(myPrefab, spawnPosition, transform.rotation);
+
+
     }
 
 }
