@@ -7,14 +7,15 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
     public float rotationSpeed = 15f;
-        public Camera mainCamera;
+    public Camera mainCamera;
+    public int playerHealth;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
+        playerHealth = 3;
     }
 
     // Update is called once per frame
@@ -31,6 +32,10 @@ public class PlayerController : MonoBehaviour
 
         }
 
+        if (playerHealth == 0)
+        {
+            Destroy(gameObject);
+        }
 
 
     }
