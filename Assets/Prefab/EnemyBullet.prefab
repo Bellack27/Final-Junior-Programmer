@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 164034219671707399, guid: 74b8ebffd8702b240b6cd5b68d0be80a, type: 3}
+      propertyPath: m_Constraints
+      value: 124
+      objectReference: {fileID: 0}
     - target: {fileID: 1927914658301574612, guid: 74b8ebffd8702b240b6cd5b68d0be80a, type: 3}
       propertyPath: m_Name
-      value: EnemyBullet Variant
+      value: EnemyBullet
       objectReference: {fileID: 0}
     - target: {fileID: 4881305096818073008, guid: 74b8ebffd8702b240b6cd5b68d0be80a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0c05b3a3c8fdd0144b9142e284ece67a, type: 2}
+    - target: {fileID: 6432228015580768168, guid: 74b8ebffd8702b240b6cd5b68d0be80a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4052499537701947412, guid: 74b8ebffd8702b240b6cd5b68d0be80a, type: 3}
     m_RemovedGameObjects: []
@@ -82,3 +90,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f381c29a6edcec64b830ecf801548520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBullet
+  m_Speed: 20
+  targetObject: {fileID: 1704819780109380379, guid: 0df29d3b68a2eb649a2418b61ef7e554, type: 3}
+  ignoreTarget: {fileID: 6716014248263447205, guid: 6b9df6f5f42833340990f78142171ccd, type: 3}

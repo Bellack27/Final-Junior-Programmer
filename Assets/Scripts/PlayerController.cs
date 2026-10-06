@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
 
     }
-    void RotateTowardsMouse()
+    void RotateTowardsMouse() // ABSTRACTION
     {
         Plane groundPlane = new Plane(Vector3.up, new Vector3(0, transform.position.y, 0));
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    void MovePlayer()
+    void MovePlayer() // ABSTRACTION
     {
         float h = Input.GetAxisRaw("Horizontal"); // A/D
         float v = Input.GetAxisRaw("Vertical");   // W/S
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         transform.position += moveDirection * moveSpeed * Time.deltaTime;
     }
 
-    void shoot()
+    void shoot() // ABSTRACTION
     {
         
         float offsetDistance = 1.5f;

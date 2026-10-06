@@ -126,6 +126,8 @@ GameObject:
   - component: {fileID: 1099757197270185295}
   - component: {fileID: 5309072108442655437}
   - component: {fileID: 2415893811021397613}
+  - component: {fileID: 8600412099858068472}
+  - component: {fileID: 4408830459564053747}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Enemy
@@ -229,3 +231,50 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8600412099858068472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716014248263447205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54535a1b6e06efc4689c402c46a20d87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyBase
+  enemyHealth: 0
+  target: {fileID: 1094826245485035656, guid: 0df29d3b68a2eb649a2418b61ef7e554, type: 3}
+  speed: 5
+  rotateSpeed: 5
+  minDistance: 3
+  maxDistance: 20
+  bullet: {fileID: 82293313689891003, guid: 68db8eec4416a7443a34c9eb77849b32, type: 3}
+  spawnInterval: 3
+--- !u!54 &4408830459564053747
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6716014248263447205}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0

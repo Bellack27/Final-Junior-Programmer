@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4354040060459352532}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -129,10 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f26854ec1493aa49aab16df8bf1e530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  myPrefab: {fileID: 1927914658301574612, guid: 74b8ebffd8702b240b6cd5b68d0be80a, type: 3}
+  myPrefab: {fileID: 4791798687144339940, guid: b53caf88c26e61c46b895cf6ce71bfcd, type: 3}
   moveSpeed: 10
   rotationSpeed: 15
   mainCamera: {fileID: 0}
+  playerHealth: 0
 --- !u!143 &4354040060459352532
 CharacterController:
   m_ObjectHideFlags: 0

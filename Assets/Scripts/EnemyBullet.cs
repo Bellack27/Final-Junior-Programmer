@@ -1,17 +1,37 @@
 using UnityEngine;
 
-public class EnemyBullet : BulletBase
+public class EnemyBullet : BulletBase // INHERITANCE
 {
+    public GameObject targetObject;
+    public GameObject ignoreTarget;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
-        
+        base.Start();
+        m_Rigidbody = GetComponent<Rigidbody>();  // POLYMORPHISM
+        if (targetObject != null)
+        {
+            transform.LookAt(targetObject.transform);
+        }
+
+        if (ignoreTarget != null)
+        {
+            Collider myCollider = GetComponent<Collider>();
+            Collider targetCollider = ignoreTarget.GetComponent<Collider>();
+
+            if (myCollider != null && targetCollider != null)
+            {
+                // Tell Unity to ignore collisions between these two specific colliders
+                Physics.IgnoreCollision(myCollider, targetCollider, true);
+            }
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-        
+        base.Start();
+        BulletMove(); // INHERITANCE
     }
 
     private void OnCollisionEnter(Collision collision)
