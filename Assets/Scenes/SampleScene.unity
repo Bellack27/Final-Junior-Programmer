@@ -808,22 +808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1704819780109380379, guid: 0df29d3b68a2eb649a2418b61ef7e554, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4842695981736462012, guid: 0df29d3b68a2eb649a2418b61ef7e554, type: 3}
-      propertyPath: myPrefab
-      value: 
-      objectReference: {fileID: 4791798687144339940, guid: b53caf88c26e61c46b895cf6ce71bfcd, type: 3}
     - target: {fileID: 4842695981736462012, guid: 0df29d3b68a2eb649a2418b61ef7e554, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 8756958298567889711, guid: 0df29d3b68a2eb649a2418b61ef7e554, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
