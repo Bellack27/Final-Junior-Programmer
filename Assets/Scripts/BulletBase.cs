@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BulletBase : MonoBehaviour
 {
-    Rigidbody m_Rigidbody;
+    protected Rigidbody m_Rigidbody;
     public float m_Speed = 20.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,6 +13,11 @@ public class BulletBase : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        BulletMove();
+    }
+
+    protected void BulletMove()
     {
         m_Rigidbody.linearVelocity = transform.forward * m_Speed;
     }
