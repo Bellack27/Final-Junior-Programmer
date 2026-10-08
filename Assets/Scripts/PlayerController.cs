@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         RotateTowardsMouse();
         MovePlayer();
 
-        if (Input.GetMouseButtonDown(0)) // 0 represents the left mouse button
+        if (Input.GetMouseButtonDown(0)) 
         {
             shoot();
 
